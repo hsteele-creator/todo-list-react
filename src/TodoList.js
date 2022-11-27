@@ -5,12 +5,14 @@ const TodoList = () => {
 
 const [list, setList] = useState(["mow the lawn", "buy groceries", "get a car wash"]);
 
-const remove = (list) => {
-    setList()
+const remove = (task) => {
+    setList(list => {
+        return [...list].filter(item => item !== task)   
+    })
 }
 
     return (
-        list.map(item => <Todo task={item}/>)
+        list.map(item => <Todo task={item} remove={remove}/>)
     )
 }
 
