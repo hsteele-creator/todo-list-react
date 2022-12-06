@@ -1,5 +1,8 @@
 import React, {useState} from "react"
 import Todo from "./Todo"
+import InputForm from "./InputForm"
+import "./TodoList.css"
+
 
 const TodoList = () => {
 
@@ -12,7 +15,11 @@ const remove = (task) => {
 }
 
     return (
-        list.map(item => <Todo task={item} remove={remove}/>)
+        <>
+        <h1 id="todo-header">To do list</h1>
+        <InputForm />
+        {list.map(item => <Todo task={item} remove={remove}/>)}
+        </>
     )
 }
 

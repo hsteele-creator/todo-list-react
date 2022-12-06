@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import "./Todo.css"
 
 const Todo = ({task, remove}) => {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
     const ToggleClass = () => {
         setActive(!active)
     }
