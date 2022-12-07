@@ -14,11 +14,15 @@ const remove = (task) => {
     })
 }
 
+const addTask = (task) => {
+    setList(list => [...list, task])
+}
+
     return (
         <>
         <h1 id="todo-header">To do list</h1>
-        <InputForm />
-        {list.map(item => <Todo task={item} remove={remove}/>)}
+        <InputForm addTask={addTask}/>
+        {list.map(item => <Todo task={item} remove={remove} />)}
         </>
     )
 }
