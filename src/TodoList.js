@@ -6,7 +6,8 @@ import "./TodoList.css"
 
 const TodoList = () => {
 
-const [list, setList] = useState(["mow the lawn", "buy groceries", "get a car wash"]);
+    // change to array of objects with dates
+const [list, setList] = useState([{task: "", date: ""}]);
 
 const remove = (task) => {
     setList(list => {
@@ -15,6 +16,7 @@ const remove = (task) => {
 }
 
 const addTask = (task) => {
+    // setList(list => [...list, task])
     setList(list => [...list, task])
 }
 
