@@ -3,13 +3,10 @@ import "./Todo.css"
 
 const Todo = ({task, remove}) => {
     const [active, setActive] = useState(true);
-    const ToggleClass = () => {
-        setActive(!active)
-    }
     return (
         <div className="Todo">
-            <p className={!active ? "done" : ""}>{task}</p>
-            <button onClick={ToggleClass}>Done</button>
+            <p className={!active ? "done" : ""}>{task.task}</p>
+            <button onClick={() => setActive(!active)}>Done</button>
             <button onClick={() => remove(task)}className="remove-button">Remove</button>
         </div>
     )

@@ -7,7 +7,7 @@ import "./TodoList.css"
 const TodoList = () => {
 
     // change to array of objects with dates
-const [list, setList] = useState([{task: "", date: ""}]);
+const [list, setList] = useState([]);
 
 const remove = (task) => {
     setList(list => {
@@ -24,7 +24,7 @@ const addTask = (task) => {
         <>
         <h1 id="todo-header">To do list</h1>
         <InputForm addTask={addTask}/>
-        {list.map(item => <Todo task={item} remove={remove} />)}
+        {list.map(item => <Todo task={item} remove={remove}/>)}
         </>
     )
 }
